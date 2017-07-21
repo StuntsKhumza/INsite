@@ -1,0 +1,61 @@
+<div class="container">
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <img src="img/zebra3.jpg">
+            
+        </div>
+
+        <div class="col-md-9">
+            <br>
+            <br>
+            <div class="row">
+
+
+                <div class="col-md-12">
+                    <div class="input-group">
+
+                        <input type="text" class="form-control" placeholder="Search for..." ng-model="search_result_field">
+                        <span class="input-group-btn">
+        <button class="btn btn-outline-primary" type="button" ng-click="search2()"><i class="fa fa-search" aria-hidden="true"></i> Find</button>
+      </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="row">
+
+            <div class="col-md-12">
+                <br>
+                <button type="button" class="btn btn-outline-primary"><i class="fa fa-users" aria-hidden="true"></i> People</button>
+                <button type="button" class="btn btn-outline-primary"><i class="fa fa-file" aria-hidden="true"></i> Documentation</button>
+                <button type="button" class="btn btn-outline-primary"><i class="fa fa-book" aria-hidden="true"></i> Training</button>
+                <button type="button" class="btn btn-outline-primary"><i class="fa fa-life-ring" aria-hidden="true"></i> Support</button>
+                <button type="button" class="btn btn-outline-primary"><i class="fa fa-desktop" aria-hidden="true"></i> Systems</button>
+
+
+            </div>
+
+
+        </div>
+        <br>
+        <hr>
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <div ng-repeat="result in dataFromSearch">
+
+                    <search-result data="result"></search-result>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</div>

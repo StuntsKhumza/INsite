@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>INsite</title>
+
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="js/apiJS.js"></script>
+    <script src="js/search-result/search-page.js"></script>
+    <script src="js/add-search/add-search.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body ng-app="myApp">
+
+    <div class="container-fluid">
+        <div style="height: 80px; border-bottom:1px solid #ccc;">
+            <div class="pull-right">
+                <br>
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addSearch"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add New</button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="container" ng-controller="myCtrl">
+
+        <br>
+        <br>
+
+        <search-results-page data-obj="dataFromSearch" ng-if="showResults && dataFromSearch.length > 0 "></search-results-page>
+        <div class="search" ng-if="!showResults">
+            <div class="search-img">
+                <img src="img/zebra3.jpg">
+                <H4>INsite</H4>
+                <br>
+                <br>
+            </div>
+
+
+
+            <div class="row">
+
+                <div class="col-md-12">
+                    <input type="text" class="form-control" placeholder="Search for..." ng-model="obj.search_field" ng-keyup="submit_e($event)">
+                    <br>
+
+                    <div class="search-btn">
+
+
+                        <p>
+                            <a class="btn btn-primary" href="#" aria-expanded="false" aria-controls="collapseExample" ng-click="submit()" ng-disabled="search_field.length == 0">
+    <i class="fa fa-search" aria-hidden="true"></i> Find
+  </a>
+                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+                                aria-controls="collapseExample">
+    Advance
+  </button>
+                        </p>
+
+                    </div>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-block">
+                            <p><b>Search from:</b></p><br>
+                            <div class="row">
+
+                                <div class="col-md-3">
+                                    <label> SM9:</label>
+
+
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="checkbox">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    Avecksa:
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="checkbox">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12"></div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    <div class="modal fade" id="addSearch" role="dialog">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add New Search Entry</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            Url:
+                        </div>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-3">
+                            Title:
+                        </div>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-3">
+                            Description:
+                        </div>
+                        <div class="col-md-9">
+                            <textarea class="form-control" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-3">
+                            Keyword:
+                        </div>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Proceed</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
